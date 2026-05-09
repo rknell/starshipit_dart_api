@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  analyze-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - name: Pub get (package root)
+        run: dart pub get
+
+      - name: Verify formatting
+        run: dart format --output=none --set-exit-if-changed lib test tool example
+
+      - name: Analyze (package root)
+        run: dart analyze
+
+      - name: Test (package root)
+        run: dart test
+
+      - name: Example package
+        working-directory: example
+        run: |
+          dart pub get
+          dart analyze

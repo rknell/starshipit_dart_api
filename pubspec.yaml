@@ -1,0 +1,22 @@
+name: starshipit
+description: Dart client for the Starshipit shipping API (orders, labels, rates, tracking).
+version: 0.1.0
+repository: https://github.com/rknell/starshipit_dart_api
+homepage: https://github.com/rknell/starshipit_dart_api
+issue_tracker: https://github.com/rknell/starshipit_dart_api/issues
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  http: ^1.2.2
+  json_annotation: ^4.11.0
+
+dev_dependencies:
+  lints: ^5.0.0
+  build_runner: ^2.4.13
+  json_serializable: ^6.8.0
+  test: ^1.25.8
+  mocktail: ^1.0.4
+  dotenv: ^4.2.0
+  path: ^1.9.0

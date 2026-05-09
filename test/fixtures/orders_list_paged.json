@@ -1,0 +1,26 @@
+{
+  "page_number": 1,
+  "page_size": 2,
+  "total_pages": 1,
+  "total_records": 2,
+  "data": {
+    "orders": [
+      {
+        "order_id": 100,
+        "carrier_id": 9,
+        "carrier_name": "Plain Label",
+        "shipping_method": "FREEDELIVERY",
+        "order_number": "X1",
+        "carrier_service_code": "Plain Label"
+      },
+      {
+        "order_id": 101,
+        "carrier_id": 47,
+        "carrier_name": "MyPost Business",
+        "shipping_method": "B30",
+        "order_number": "X2",
+        "carrier_service_code": "B30"
+      }
+    ]
+  }
+}

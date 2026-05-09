@@ -1,0 +1,13 @@
+# Dart
+.dart_tool/
+.packages
+build/
+
+# Secrets
+.env
+*.pem
+
+# IDE
+.idea/
+*.iml
+.vscode/

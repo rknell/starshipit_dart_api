@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Git pre-commit: formatting, static analysis, and tests for the main and example packages.
+set -euo pipefail
+
+ROOT="$(git rev-parse --show-toplevel)"
+cd "$ROOT"
+
+echo "pre-commit: dart pub get (package root)"
+dart pub get
+
+echo "pre-commit: dart format (check)"
+dart format --output=none --set-exit-if-changed lib test tool example
+
+echo "pre-commit: dart analyze (package root)"
+dart analyze
+
+echo "pre-commit: dart test (package root)"
+dart test
+
+echo "pre-commit: example package"
+(
+  cd example
+  dart pub get
+  dart analyze
+)
+
+echo "pre-commit: OK"
